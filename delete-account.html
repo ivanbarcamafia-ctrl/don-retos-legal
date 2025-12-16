@@ -1,81 +1,171 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <title>Eliminar cuenta — Don Retos</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Don Retos — Eliminación de cuenta</title>
+  <meta name="description" content="Solicitar eliminación de cuenta y datos asociados — Don Retos (Iván Barca)" />
   <style>
+    :root{
+      --bg0:#050516; --bg1:#020617;
+      --txt:#fff; --muted:rgba(255,255,255,.72);
+      --card:rgba(255,255,255,.06);
+      --stroke:rgba(255,255,255,.14);
+      --violet:#7C3AED; --pink:#EC4899; --magenta:#E100FF;
+      --shadow: 0 18px 46px rgba(0,0,0,.55);
+      --r:22px; --max:980px;
+    }
+    *{box-sizing:border-box}
     body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      background:#050516;
-      color:white;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      min-height:100vh;
+      margin:0; color:var(--txt);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background:
+        radial-gradient(900px 500px at 20% 0%, rgba(124,58,237,.35), transparent 55%),
+        radial-gradient(800px 480px at 90% 10%, rgba(225,0,255,.22), transparent 55%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px}
+    .top{
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      margin-bottom:14px;
+    }
+    .brand{display:flex; align-items:center; gap:10px; font-weight:900}
+    .logo{
+      width:34px; height:34px; border-radius:12px;
+      background: linear-gradient(135deg, var(--violet), var(--pink));
+      box-shadow: 0 10px 24px rgba(124,58,237,.35);
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 14px; border-radius:16px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      font-weight:900;
+      box-shadow: 0 10px 28px rgba(0,0,0,.35);
+      transition: transform .12s ease, background .12s ease;
+    }
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.09)}
+    .btn.primary{
+      border:none;
+      background: linear-gradient(135deg, var(--violet), var(--magenta), var(--pink));
+      box-shadow: 0 14px 36px rgba(124,58,237,.40);
     }
     .card{
-      max-width:520px;
-      padding:28px;
-      border-radius:20px;
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.12);
-      box-shadow:0 20px 50px rgba(0,0,0,.6);
+      border:1px solid rgba(255,255,255,.10);
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+      border-radius: var(--r);
+      box-shadow: var(--shadow);
+      padding:18px;
+      overflow:hidden;
     }
-    h1{
-      margin-top:0;
-      font-size:26px;
+    h1{margin:6px 0 8px; font-size:30px; letter-spacing:-.4px}
+    p{margin:0 0 10px; color:var(--muted); line-height:1.55}
+    .grid{display:grid; grid-template-columns: 1.2fr .8fr; gap:14px}
+    @media(max-width:900px){ .grid{grid-template-columns:1fr} }
+    .box{
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 18px;
+      padding:14px;
     }
-    p{
-      color:rgba(255,255,255,.75);
-      line-height:1.5;
+    .box h2{margin:0 0 8px; font-size:16px}
+    ul{margin:8px 0 0 18px; color:var(--muted); line-height:1.6}
+    code{
+      background: rgba(0,0,0,.35);
+      padding:2px 6px; border-radius:8px;
+      border:1px solid rgba(255,255,255,.10);
     }
-    a{
-      display:inline-block;
-      margin-top:14px;
-      padding:12px 18px;
-      border-radius:14px;
-      background:linear-gradient(135deg,#7C3AED,#EC4899);
-      color:white;
-      text-decoration:none;
-      font-weight:700;
-    }
-    small{
-      display:block;
-      margin-top:16px;
-      color:rgba(255,255,255,.5);
-      font-size:12px;
-    }
+    .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+    .small{font-size:12px; color:rgba(255,255,255,.60)}
+    .footer{margin-top:16px; color:rgba(255,255,255,.55); font-size:12px}
   </style>
 </head>
-
 <body>
-  <div class="card">
-    <h1>Eliminar cuenta — Don Retos</h1>
+  <div class="wrap">
+    <div class="top">
+      <div class="brand">
+        <div class="logo"></div>
+        <div>Don Retos <span style="opacity:.6">—</span> <span style="opacity:.85">Iván Barca</span></div>
+      </div>
+      <a class="btn" href="./index.html">Volver</a>
+    </div>
 
-    <p>
-      Si deseas eliminar tu cuenta y los datos asociados a la aplicación
-      <b>Don Retos</b>, envía un correo electrónico desde la dirección con la
-      que te registraste.
-    </p>
+    <div class="card">
+      <h1>Eliminar cuenta y datos — Don Retos</h1>
+      <p>
+        Esta página explica cómo solicitar la eliminación de tu cuenta y los datos asociados.
+        <b>Marca:</b> Iván Barca · <b>Contacto:</b> ivanbarcamafia@gmail.com
+      </p>
 
-    <p>
-      En el mensaje indica claramente:
-    </p>
+      <div class="grid">
+        <div class="box">
+          <h2>Cómo solicitar la eliminación</h2>
+          <p>Elige una opción (recomendamos el formulario):</p>
 
-    <ul>
-      <li>Tu correo registrado</li>
-      <li>Solicitud de eliminación de cuenta</li>
-    </ul>
+          <div class="actions">
+            <!-- ✅ RECOMENDADO: Google Form -->
+            <a class="btn primary"
+               href="TU_LINK_FORM"
+               target="_blank" rel="noopener">
+              Solicitar eliminación (formulario)
+            </a>
 
-    <a href="mailto:ivanbarcamafia@gmail.com?subject=Eliminar%20cuenta%20Don%20Retos">
-      Solicitar eliminación por email
-    </a>
+            <!-- ✅ BACKUP: Email -->
+            <a class="btn"
+               href="mailto:ivanbarcamafia@gmail.com?subject=Solicitud%20de%20eliminaci%C3%B3n%20de%20cuenta%20%E2%80%94%20Don%20Retos&body=Hola%2C%0A%0ASolicito%20la%20eliminaci%C3%B3n%20de%20mi%20cuenta%20y%20datos%20asociados%20en%20Don%20Retos.%0A%0ACorreo%20de%20la%20cuenta%3A%20%5BESCRIBE%20TU%20CORREO%5D%0AID%20de%20usuario%20(opcional)%3A%20%5BOPCIONAL%5D%0A%0AGracias.">
+              Solicitar por email
+            </a>
+          </div>
 
-    <small>
-      Los datos se eliminan de forma permanente en un plazo máximo de 30 días.
-    </small>
+          <p class="small" style="margin-top:10px">
+            Si usas email, escribe el correo con el que usas Don Retos para que podamos identificar la cuenta.
+          </p>
+
+          <h2 style="margin-top:14px">Qué se elimina</h2>
+          <ul>
+            <li>Cuenta de acceso (p. ej. login por email / Google).</li>
+            <li>Datos asociados en Firebase (perfil, progreso y preferencias, si aplica).</li>
+          </ul>
+
+          <h2 style="margin-top:14px">Qué podría conservarse</h2>
+          <ul>
+            <li>Registros mínimos relacionados a compras/facturación si son requeridos por ley (no se usan para marketing).</li>
+            <li>Logs técnicos de seguridad/anti-fraude por un periodo limitado (por ejemplo, hasta 30 días).</li>
+          </ul>
+
+          <h2 style="margin-top:14px">Plazo</h2>
+          <ul>
+            <li>Respondemos normalmente en <b>7–30 días</b> (dependiendo del volumen).</li>
+          </ul>
+        </div>
+
+        <div class="box">
+          <h2>Ayuda rápida</h2>
+          <p class="small">
+            Si estás en la app, también puedes escribirnos desde Ajustes → Legal/Soporte (si lo agregas).
+          </p>
+
+          <h2 style="margin-top:14px">Links</h2>
+          <ul>
+            <li><a href="./privacy.html">Política de privacidad</a></li>
+            <li><a href="./terms.html">Términos del servicio</a></li>
+            <li><a href="./index.html">Página principal</a></li>
+          </ul>
+
+          <h2 style="margin-top:14px">Importante</h2>
+          <p class="small">
+            Don Retos es un juego de fiesta. Recomendamos jugar con consentimiento y límites claros.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer">
+        © <span id="y"></span> Don Retos · Iván Barca — Ecuador
+      </div>
+    </div>
   </div>
+
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
 </body>
 </html>
